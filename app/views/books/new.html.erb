@@ -1,0 +1,17 @@
+<h2>Books</h2>
+<main>
+  <div class="search">
+  
+    <%= form_with model: @list do |f| %>
+      <div class="form-row">
+        <p>本のタイトル</p>
+        <%= f.text_field :title %>
+        <p>感想</p>
+        <%= f.text_field :title %>
+      </div>
+      <%= f.submit 'Create Book' %>
+    <% end %>
+	  
+      
+  </div>
+</main>

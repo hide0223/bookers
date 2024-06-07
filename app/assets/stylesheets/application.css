@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+h2 {
+  margin-top: 30px;
+  margin-left: 20px;
+}
+ 
+p {
+  white-space: pre-line;
+  margin-left: 50px;
+  padding-bottom: 10px;
+}
+  
+span {
+  padding-left: 50px;
+  
+}
+
+.form-row {
+  align-items: center; 
+  margin-left: 20px; 
+}
+
+.form-row p {
+  margin-left: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+input[type="submit"] {
+  margin-left: 20px;
+}
