@@ -1,2 +1,55 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<h2>Books</h2>
+<% if @book.errors.any? %>
+    <%= @book.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<main>
+  <div class="title">
+    <h5>本のタイトル</h5>
+    <% @books.each do |book| %>
+    <div class="title-box">
+      <p><%= book.title %></p>
+    </div>
+    <% end %>
+  </div>
+  
+  <div class="body">
+    <h5>感想</h5>
+    <% @books.each do |book| %>
+    <div class="body-box">
+      <p><%= book.body %></p>
+    </div>
+    <% end %>
+  </div>
+  
+  <div class="select">
+    <h5></h5>
+    <% @books.each do |book| %>
+    <div class="select-box">
+      <a href="/books/<%= book.id %>">Show</a>
+      <a href="/books/<%= book.id %>/edit">Edit</a>
+      <a href="/books/<%= book.id %>" data-confirm="削除してもよろしいですか？" data-method="delete" rel="nofollow">Destroy</a>
+    </div>
+    <% end %>
+  </div>
+</main>
+
+<h2>New book</h2>
+<ma>
+  <div class="search-box">
+    <%= form_with model: @book do |f| %>
+      <div class="search-form">
+        <p>本のタイトル</p>
+        <%= f.text_field :title %>
+        <p>感想</p>
+        <%= f.text_area :body %>
+      </div>
+      <%= f.submit 'Create Book' %>
+    <% end %>
+  </div>
+</main>
