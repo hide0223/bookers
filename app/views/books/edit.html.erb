@@ -11,21 +11,21 @@
       </div>
       <%= f.submit 'Update Book' %>
     <% end %>
-    <%= link_to "Show", book_path(@book.id) %>|<%= link_to "Back", new_book_path(@book.id) %>
+    <%= link_to "Show", book_path(@book.id) %>|<%= link_to "Back", books_path %>
   </div>
 </main>
 
 <!--<h2>Editing Book</h2>-->
 <!--<main>-->
 <!--  <div class="search-box">-->
-<!--    <%= form_with model: @book do |f| %>-->
+<!--    %= form_with model: @book do |f| %>-->
 <!--      <div class="search-form">-->
 <!--        <p>本のタイトル</p>-->
-<!--        <%= f.text_field :title %>-->
+<!--        %= f.text_field :title %>-->
 <!--        <p>感想</p>-->
-<!--        <%= f.text_area :body %>-->
+<!--        %= f.text_area :body %>-->
 <!--      </div>-->
-<!--      <%= f.submit 'Create Book' %>-->
-<!--    <% end %>-->
+<!--      %= f.submit 'Create Book' %>-->
+<!--    % end %>-->
 <!--  </div>-->
 <!--</main>-->

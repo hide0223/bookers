@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   def new
-    @books = Book.all
-    @book = Book.new
+    # @books = Book.all
+    # @book = Book.new
   end
   
   def create
@@ -11,7 +11,7 @@ class BooksController < ApplicationController
       redirect_to book_path(@book.id)
     else
       @books = Book.all
-      render :new
+      render :index
     end
   end
 
