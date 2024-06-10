@@ -1,6 +1,40 @@
 <h2>Books</h2>
+<table>
+  <div class="title-body">
+    <div class="title">
+      <h5>本のタイトル</h5>
+      <% @books.each do |book| %>
+      <div class="title-box">
+        <p><%= book.title %></p>
+      </div>
+      <% end %>
+    </div>
+  
+    <div class="body">
+      <h5>感想</h5>
+      <% @books.each do |book| %>
+      <div class="body-box">
+        <p><%= book.body %></p>
+      </div>
+      <% end %>
+    </div>
+  
+    <div class="select">
+      <h5></h5>
+      <% @books.each do |book| %>
+      <div class="select-box">
+        <a href="/books/<%= book.id %>">Show</a>
+        <a href="/books/<%= book.id %>/edit">Edit</a>
+        <a href="/books/<%= book.id %>" data-confirm="削除してもよろしいですか？" data-method="delete" rel="nofollow">Destroy</a>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</table>
+
+
 <% if @book.errors.any? %>
-    <%= @book.errors.count %>件のエラーが発生しました
+    <%= @book.errors.count %>errors prohibited this book from being saved:
   <ul>
     <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -8,39 +42,8 @@
   </ul>
 <% end %>
 
-<table>
-  <div class="title">
-    <h5>本のタイトル</h5>
-    <% @books.each do |book| %>
-    <div class="title-box">
-      <p><%= book.title %></p>
-    </div>
-    <% end %>
-  </div>
-  
-  <div class="body">
-    <h5>感想</h5>
-    <% @books.each do |book| %>
-    <div class="body-box">
-      <p><%= book.body %></p>
-    </div>
-    <% end %>
-  </div>
-  
-  <div class="select">
-    <h5></h5>
-    <% @books.each do |book| %>
-    <div class="select-box">
-      <a href="/books/<%= book.id %>">Show</a>
-      <a href="/books/<%= book.id %>/edit">Edit</a>
-      <a href="/books/<%= book.id %>" data-confirm="削除してもよろしいですか？" data-method="delete" rel="nofollow">Destroy</a>
-    </div>
-    <% end %>
-  </div>
-</table>
-
 <h2>New book</h2>
-<ma>
+<main>
   <div class="search-box">
     <%= form_with model: @book do |f| %>
       <div class="search-form">

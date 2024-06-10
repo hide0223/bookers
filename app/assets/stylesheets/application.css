@@ -52,7 +52,7 @@ input[type="submit"] {
   float: left;
 }
 
-main {
+.title-body {
   display: flex;
 }
 
@@ -105,12 +105,21 @@ main {
 .show-title p {
   padding-top: 30px;
   padding-bottom: 0px;
+  margin-bottom: 0px;
+  margin-left: 20px;
 }
 
 .show-body p {
   padding-top: 30px;
   padding-bottom: 0px;
+  margin-bottom: 0px;
+  margin-left: 20px;
 }
 
+.edit-back {
+  margin-left: 20px;
+}
 
-
+.show-back {
+  margin-left: 20px;
+}
